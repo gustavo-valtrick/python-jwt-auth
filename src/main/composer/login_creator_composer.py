@@ -8,6 +8,6 @@ def login_creator_composer() -> LoginCreatorView:
     conn = db_connection_handler.get_connection()
     model = UserRepository(conn=conn)
     controller = LoginCreator(user_repository=model)
-    view = LoginCreatorView(controller=controller)
+    view = LoginCreatorView(login_creator=controller)
 
     return view
