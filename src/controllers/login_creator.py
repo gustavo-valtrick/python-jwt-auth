@@ -1,9 +1,10 @@
 from src.models.interface.user_repository import UserRepositoryInterface
 from src.drivers.jwt_handler import JwtHandler
 from src.drivers.password_handler import PasswordHandler
+from .interfaces.login_creator import LoginCreatorInterface
 
 
-class LoginCreator:
+class LoginCreator(LoginCreatorInterface):
     def __init__(self, user_repository: UserRepositoryInterface):
         self.__user_repository = user_repository
         self.__jwt_handler = JwtHandler()
